@@ -1,0 +1,182 @@
+//Start Font-Family
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+$font-stack: "Outfit", sans-serif;
+$Font-size: 18px;
+
+// Start Colors
+$Soft-blue: hsl(215, 51%, 70%);
+$Cyan: hsl(178, 100%, 50%);
+$Very-dark-blue-1: hsl(217, 54%, 11%);
+$Very-dark-blue-2: hsl(216, 50%, 16%);
+$Very-dark-blue-3: hsl(215, 32%, 27%);
+$box-shadow: hsl(217deg 55% 10%);
+$White: hsl(0, 0%, 100%);
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.main-card {
+  font-family: $font-stack;
+  font-size: $Font-size;
+  background-color: $Very-dark-blue-1;
+  color: $Soft-blue;
+  height: 100vh;
+  min-height: 670px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  .card {
+    background-color: $Very-dark-blue-2;
+    height: 580px;
+    max-height: 580px;
+    width: 80%;
+    max-width: 310px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 15px 20px 15px $box-shadow;
+    .head-img {
+      width: 100%;
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      .viwe {
+        z-index: 2;
+        opacity: 0;
+        position: absolute;
+        margin-top: 50%;
+        margin-left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .head-img:hover::before {
+      cursor: pointer;
+      opacity: 0.6;
+      z-index: 1;
+    }
+    .head-img:before {
+      content: "";
+      background-image: url(/images/icon-view.svg);
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-position-y: center;
+      background-size: 50px 50px;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: $Cyan;
+      // transition: opacity 0.3s;
+    }
+    h2 {
+      color: $White;
+      font-weight: 600;
+      font-size: 22px;
+    }
+    h2:hover {
+      cursor: pointer;
+      color: $Cyan;
+    }
+    .days-left {
+      display: flex;
+      justify-content: space-between;
+      p:first-child {
+        color: $Cyan;
+        font-weight: 600;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          height: 18px;
+          width: 11px;
+          margin-right: 3px;
+        }
+      }
+      p:last-child {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+          height: 18px;
+          width: 18px;
+          margin-right: 3px;
+        }
+      }
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background: $Very-dark-blue-3;
+      background-image: $Very-dark-blue-3;
+    }
+    .user {
+      // margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-weight: 300;
+      img {
+        height: 30px;
+        width: 30px;
+        border: 2px solid $White;
+        border-radius: 50px;
+        margin-right: 10px;
+      }
+      p span {
+        color: $White;
+      }
+      p span:hover {
+        cursor: pointer;
+        color: $Cyan;
+      }
+    }
+  }
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $Very-dark-blue-2;
+  height: 10vh;
+  color: $Very-dark-blue-3;
+  .icons {
+    display: flex;
+    flex-direction: row;
+    width: 80px;
+    justify-content: space-between;
+    svg {
+      fill: $White;
+      height: 34px;
+      width: 34px;
+    }
+    svg:hover {
+      fill: $Cyan;
+      cursor: pointer;
+    }
+  }
+  a {
+    font-family: $font-stack;
+    font-weight: 400;
+    font-size: 20px;
+    color: $Soft-blue;
+    text-decoration: unset;
+    cursor: unset;
+  }
+  a span {
+    color: $White;
+  }
+  a span:hover {
+    color: $Cyan;
+    cursor: pointer;
+  }
+}
